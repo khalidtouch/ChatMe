@@ -14,9 +14,9 @@
  *   limitations under the License.
  */
 
-import com.android.build.api.dsl.ApplicationExtension
+
 import com.android.build.gradle.LibraryExtension
-import com.google.samples.apps.nowinandroid.configureGradleManagedDevices
+import com.khalidtouch.chatme.convention.configureGradleManagedDevices
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.artifacts.VersionCatalogsExtension
@@ -29,13 +29,13 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             pluginManager.apply {
-                apply("nowinandroid.android.library")
-                apply("nowinandroid.android.hilt")
+                apply("chatme.android.library")
+                apply("chatme.android.hilt")
             }
             extensions.configure<LibraryExtension> {
                 defaultConfig {
                     testInstrumentationRunner =
-                        "com.google.samples.apps.nowinandroid.core.testing.NiaTestRunner"
+                        "androidx.test.runner.AndroidJUnitRunner"
                 }
                 configureGradleManagedDevices(this)
             }
@@ -49,12 +49,9 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
                 add("implementation", project(":core:data"))
                 add("implementation", project(":core:common"))
                 add("implementation", project(":core:domain"))
-                add("implementation", project(":core:analytics"))
 
                 add("testImplementation", kotlin("test"))
-                add("testImplementation", project(":core:testing"))
                 add("androidTestImplementation", kotlin("test"))
-                add("androidTestImplementation", project(":core:testing"))
 
                 add("implementation", libs.findLibrary("coil.kt").get())
                 add("implementation", libs.findLibrary("coil.kt.compose").get())
@@ -62,7 +59,6 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
                 add("implementation", libs.findLibrary("androidx.hilt.navigation.compose").get())
                 add("implementation", libs.findLibrary("androidx.lifecycle.runtimeCompose").get())
                 add("implementation", libs.findLibrary("androidx.lifecycle.viewModelCompose").get())
-
                 add("implementation", libs.findLibrary("kotlinx.coroutines.android").get())
             }
         }

@@ -8,9 +8,7 @@ import org.gradle.kotlin.dsl.dependencies
 import org.gradle.kotlin.dsl.getByType
 import java.io.File
 
-/**
- * Configure Compose-specific options
- */
+
 internal fun Project.configureAndroidCompose(
     commonExtension: CommonExtension<*, *, *, *>,
 ) {

@@ -12,23 +12,20 @@ enum class FlavorDimension {
     contentType
 }
 
-// The content for the app can either come from local static data which is useful for demo
-// purposes, or from a production backend server which supplies up-to-date, real content.
-// These two product flavors reflect this behaviour.
 @Suppress("EnumEntryName")
-enum class NiaFlavor(val dimension: FlavorDimension, val applicationIdSuffix: String? = null) {
+enum class ChatMeFlavor(val dimension: FlavorDimension, val applicationIdSuffix: String? = null) {
     demo(FlavorDimension.contentType, applicationIdSuffix = ".demo"),
     prod(FlavorDimension.contentType, )
 }
 
 fun Project.configureFlavors(
     commonExtension: CommonExtension<*, *, *, *>,
-    flavorConfigurationBlock: ProductFlavor.(flavor: NiaFlavor) -> Unit = {}
+    flavorConfigurationBlock: ProductFlavor.(flavor: ChatMeFlavor) -> Unit = {}
 ) {
     commonExtension.apply {
         flavorDimensions += FlavorDimension.contentType.name
         productFlavors {
-            NiaFlavor.values().forEach {
+            ChatMeFlavor.values().forEach {
                 create(it.name) {
                     dimension = it.dimension.name
                     flavorConfigurationBlock(this, it)

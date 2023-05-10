@@ -4,7 +4,6 @@ plugins {
 
 group = "com.khalidtouch.chatme.convention"
 
-
 java {
     sourceCompatibility = JavaVersion.VERSION_11
     targetCompatibility = JavaVersion.VERSION_11

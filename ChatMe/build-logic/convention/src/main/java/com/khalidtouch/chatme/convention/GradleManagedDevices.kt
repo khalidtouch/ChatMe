@@ -7,9 +7,7 @@ import org.gradle.api.Project
 import org.gradle.kotlin.dsl.invoke
 import java.util.Locale
 
-/**
- * Configure project for Gradle managed devices
- */
+
 internal fun configureGradleManagedDevices(
     commonExtension: CommonExtension<*, *, *, *>,
 ) {
