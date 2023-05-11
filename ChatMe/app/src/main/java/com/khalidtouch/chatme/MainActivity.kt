@@ -10,6 +10,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.khalidtouch.chatme.core.designsystem.theme.CMTheme
 import com.khalidtouch.chatme.ui.theme.ChatMeTheme
 
 class MainActivity : ComponentActivity() {
@@ -44,3 +45,12 @@ fun GreetingPreview() {
         Greeting("Android")
     }
 }
+
+@Composable
+@Preview
+fun CMThemePreview() {
+    CMTheme {
+        Greeting("Android")
+    }
+}
+
