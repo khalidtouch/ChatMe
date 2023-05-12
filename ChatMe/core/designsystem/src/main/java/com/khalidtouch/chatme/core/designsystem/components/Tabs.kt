@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.LocalContentColor
+import androidx.compose.material3.LocalTextStyle
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ProvideTextStyle
 import androidx.compose.material3.Tab
@@ -20,6 +21,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -33,13 +36,13 @@ fun CMTabRow(
     TabRow(
         selectedTabIndex = selectedTabIndex,
         modifier = modifier,
-        containerColor = MaterialTheme.colorScheme.surface,
-        contentColor = MaterialTheme.colorScheme.onSurface,
+        containerColor = MaterialTheme.colorScheme.primary,
+        contentColor = MaterialTheme.colorScheme.onPrimary,
         indicator = { tabPositions ->
             TabRowDefaults.Indicator(
                 modifier = Modifier.tabIndicatorOffset(tabPositions[selectedTabIndex]),
-                height = 2.dp,
-                color = MaterialTheme.colorScheme.onSurface
+                height = 4.dp,
+                color = MaterialTheme.colorScheme.onPrimary
             )
         },
         tabs = tabs,
@@ -62,27 +65,22 @@ fun CMTab(
         onClick = onClick,
         modifier = modifier,
         enabled = enabled,
+        selectedContentColor = MaterialTheme.colorScheme.onPrimary,
+        unselectedContentColor = Color.Transparent,
         text = {
-            val style = MaterialTheme.typography.labelLarge.copy(
-                textAlign = TextAlign.Center
-            )
-
-            val color = if (selected) MaterialTheme.colorScheme.onSecondary else
-                MaterialTheme.colorScheme.onSecondaryContainer.copy(alpha = 0.5f)
-
-            ProvideTextStyle(value = style) {
-                Box(
-                    modifier = Modifier.padding(
-                        top = CMTabDefaults.TabTopPadding
-                    )
-                ) {
-                    CMTabText(
-                        tabState = tabState,
-                        unreadChats = unreadChats,
-                        color = color,
-                        text = text
-                    )
-                }
+            val color = if (selected) MaterialTheme.colorScheme.onPrimary else
+                MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.7f)
+            Box(
+                modifier = Modifier.padding(
+                    top = CMTabDefaults.TabTopPadding
+                )
+            ) {
+                CMTabText(
+                    tabState = tabState,
+                    unreadChats = unreadChats,
+                    color = color,
+                    text = text,
+                )
             }
         }
     )
@@ -103,7 +101,7 @@ fun CMTabText(
         verticalAlignment = Alignment.Top
     ) {
         CompositionLocalProvider(
-            LocalContentColor provides color
+            LocalContentColor provides color,
         ) {
             text()
         }

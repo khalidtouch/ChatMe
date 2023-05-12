@@ -25,8 +25,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             CMTheme(
-                darkTheme = true,
-                androidTheme = true,
+                darkTheme = false,
+                androidTheme = false,
                 disableDynamicTheming = true,
             ) {
                 CMApp(windowSizeClass = calculateWindowSizeClass(activity = this))

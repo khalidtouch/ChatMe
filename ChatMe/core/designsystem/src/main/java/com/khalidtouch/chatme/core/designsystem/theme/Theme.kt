@@ -17,7 +17,7 @@ import androidx.compose.ui.unit.dp
 
 @VisibleForTesting
 val LightDefaultColorScheme = lightColorScheme(
-    primary = Green10,
+    primary = Green40,
     onPrimary = Color.White,
     primaryContainer = Green40,
     onPrimaryContainer = Color.White,
@@ -33,15 +33,15 @@ val LightDefaultColorScheme = lightColorScheme(
     onError = Color.White,
     errorContainer = Red90,
     onErrorContainer = Red10,
-    background = DarkPurpleGray99,
-    onBackground = DarkPurpleGray10,
-    surface = Green00,
-    onSurface = DarkPurpleGray10,
-    surfaceVariant = PurpleGray90,
-    onSurfaceVariant = PurpleGray30,
-    inverseSurface = DarkPurpleGray20,
-    inverseOnSurface = DarkPurpleGray95,
-    outline = PurpleGray50,
+    background = Color.White,
+    onBackground = Green40,
+    surface = Color.White,
+    onSurface = Green40,
+    surfaceVariant = Green80,
+    onSurfaceVariant = Green00,
+    inverseSurface = DarkGreen20,
+    inverseOnSurface = DarkGreen10,
+    outline = Green90,
 )
 
 

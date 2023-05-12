@@ -34,19 +34,19 @@ enum class MainTabs(val state: TabState) {
     Chats(
         state = TabState(
             type = TabType.CHATS,
-            state = ReadState.Unread
+            state = ReadState.Read
         )
     ),
     Status(
         state = TabState(
             type = TabType.EXTRAS,
-            state = ReadState.Unread
+            state = ReadState.Read
         )
     ),
     Calls(
         state = TabState(
             type = TabType.EXTRAS,
-            state = ReadState.Unread
+            state = ReadState.Read
         )
     )
 }

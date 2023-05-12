@@ -30,10 +30,10 @@ fun CMMainTopAppBar(
     onTakePhoto: () -> Unit = {},
     onMoreOptions: () -> Unit = {},
     colors: TopAppBarColors = TopAppBarDefaults.smallTopAppBarColors(
-        containerColor = MaterialTheme.colorScheme.surface,
-        titleContentColor = MaterialTheme.colorScheme.onSurface,
-        actionIconContentColor = MaterialTheme.colorScheme.onSurface,
-        scrolledContainerColor = MaterialTheme.colorScheme.surface
+        containerColor = MaterialTheme.colorScheme.primary,
+        titleContentColor = MaterialTheme.colorScheme.onPrimary,
+        actionIconContentColor = MaterialTheme.colorScheme.onPrimary,
+        scrolledContainerColor = MaterialTheme.colorScheme.primary
     ),
 ) {
     TopAppBar(
@@ -78,10 +78,10 @@ fun CMSecondaryTopAppBar(
     @DrawableRes navIconRes: Int = CMIcons.Back,
     onBack: () -> Unit = {},
     colors: TopAppBarColors = TopAppBarDefaults.smallTopAppBarColors(
-        containerColor = MaterialTheme.colorScheme.surface,
-        titleContentColor = MaterialTheme.colorScheme.onSurface,
-        actionIconContentColor = MaterialTheme.colorScheme.onSurface,
-        scrolledContainerColor = MaterialTheme.colorScheme.surface
+        containerColor = MaterialTheme.colorScheme.primaryContainer,
+        titleContentColor = MaterialTheme.colorScheme.onPrimary,
+        actionIconContentColor = MaterialTheme.colorScheme.onPrimary,
+        scrolledContainerColor = MaterialTheme.colorScheme.primary
     ),
 ) {
     TopAppBar(

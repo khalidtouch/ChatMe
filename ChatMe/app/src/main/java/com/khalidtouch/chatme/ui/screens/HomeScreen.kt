@@ -4,10 +4,13 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.ProvideTextStyle
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.khalidtouch.chatme.core.designsystem.components.CMTab
 import com.khalidtouch.chatme.core.designsystem.components.CMTabRow
@@ -26,16 +29,22 @@ internal fun HomeScreen(
         CMTabRow(
             selectedTabIndex = selectedTabIndex.value!!
         ) {
+
+            val style = MaterialTheme.typography.labelLarge.copy(
+                textAlign = TextAlign.Center,
+            )
+
             mainTabViewModel.Tabs.forEachIndexed { index, mainTab ->
                 CMTab(
                     selected = selectedTabIndex.value!! == index,
                     onClick = { mainTabViewModel.updateTabIndex(index) },
                     tabState = mainTab.state,
                     text = {
-                        Text(
-                            text = mainTab.name,
-                            style = MaterialTheme.typography.labelMedium
-                        )
+                        ProvideTextStyle(value = style) {
+                            Text(
+                                text = mainTab.name,
+                            )
+                        }
                     }
                 )
             }

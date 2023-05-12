@@ -61,7 +61,7 @@ fun Badge(
 
 
 object CMBadgeDefaults {
-    val size = 2.dp
+    val size = 4.dp
 }
 
 
