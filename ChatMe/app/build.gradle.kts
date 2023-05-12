@@ -64,6 +64,9 @@ dependencies {
     implementation(project(":core:designsystem"))
     implementation(project(":core:ui"))
     implementation(project(":core:data"))
+    implementation(project(":feature:chats"))
+    implementation(project(":feature:calls"))
+    implementation(project(":feature:status"))
 
     val composeBom = platform(libs.androidx.compose.bom)
 

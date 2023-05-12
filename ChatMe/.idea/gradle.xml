@@ -39,6 +39,9 @@
             <option value="$PROJECT_DIR$/core/notification" />
             <option value="$PROJECT_DIR$/core/ui" />
             <option value="$PROJECT_DIR$/feature" />
+            <option value="$PROJECT_DIR$/feature/calls" />
+            <option value="$PROJECT_DIR$/feature/chats" />
+            <option value="$PROJECT_DIR$/feature/status" />
           </set>
         </option>
       </GradleProjectSettings>

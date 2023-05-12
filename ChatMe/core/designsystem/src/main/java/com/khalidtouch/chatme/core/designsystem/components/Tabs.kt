@@ -117,12 +117,12 @@ fun CMTabText(
                 ) {
                     // chat badge
                     CMChatBadge(
-                        labelColor = MaterialTheme.colorScheme.onPrimary,
-                        surfaceColor = MaterialTheme.colorScheme.primary
+                        labelColor = MaterialTheme.colorScheme.primary,
+                        surfaceColor = MaterialTheme.colorScheme.onPrimary
                     ) {
                         Text(
                             text = unreadChats.toString(),
-                            style = MaterialTheme.typography.labelSmall
+                            style = MaterialTheme.typography.labelMedium
                         )
                     }
                 }
