@@ -6,18 +6,39 @@ plugins {
 }
 
 android {
-    namespace = "com.khalidtouch.chatme.catalog"
+   // namespace = "com.khalidtouch.chatme.catalog"
+    namespace = "com.khalidtouch.catalog"
 
     defaultConfig {
-        applicationId = "com.khalidtouch.chatme.catalog"
+       // applicationId = "com.khalidtouch.chatme.catalog"
+        applicationId = "com.khalidtouch.catalog"
         versionCode = 1
         versionName = "1.0"
 
     }
 
     buildTypes {
+        val debug by getting {
+            applicationIdSuffix = com.khalidtouch.chatme.convention.ChatMeBuildType.DEBUG.applicationIdSuffix
+        }
+
         val release by getting {
+            isMinifyEnabled = true
+            applicationIdSuffix = com.khalidtouch.chatme.convention.ChatMeBuildType.RELEASE.applicationIdSuffix
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+
+
             signingConfig = signingConfigs.getByName("debug")
+        }
+
+        val benchMark by creating {
+            initWith(release)
+            matchingFallbacks.add("release")
+            signingConfig = signingConfigs.getByName("debug")
+
+            proguardFiles("benchmark-rules.pro")
+            isMinifyEnabled = true
+            applicationIdSuffix = com.khalidtouch.chatme.convention.ChatMeBuildType.BENCHMARK.applicationIdSuffix
         }
     }
 
@@ -27,11 +48,17 @@ android {
             excludes.add("/META-INF/{AL2.0,LGPL2.1}")
         }
     }
+
+    testOptions {
+        unitTests {
+            isIncludeAndroidResources = true
+        }
+    }
 }
 
 dependencies {
-    implementation(project(":core:designsystem"))
-    implementation(project(":core:ui"))
+//    implementation(project(":core:designsystem"))
+//    implementation(project(":core:ui"))
 
     val composeBom = platform(libs.androidx.compose.bom)
     implementation(composeBom)

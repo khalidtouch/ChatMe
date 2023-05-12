@@ -1,6 +1,6 @@
 plugins {
-   id("chatme.android.library")
-   id("chatme.android.hilt")
+    id("chatme.android.library")
+    id("chatme.android.hilt")
 }
 
 android {
@@ -9,4 +9,5 @@ android {
 
 dependencies {
     implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.kotlinx.serialization.json)
 }
