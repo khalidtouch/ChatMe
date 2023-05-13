@@ -13,9 +13,7 @@ import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.testTagsAsResourceId
-import com.khalidtouch.chatme.R as CMResource
 import com.khalidtouch.chatme.core.designsystem.components.CMBackground
-import com.khalidtouch.chatme.core.designsystem.components.CMMainTopAppBar
 import com.khalidtouch.chatme.navigation.CMNavHost
 
 @OptIn(ExperimentalComposeUiApi::class, ExperimentalMaterial3Api::class)
@@ -39,14 +37,6 @@ fun CMApp(
                     Modifier
                         .fillMaxSize()
                         .padding(padding)) {
-
-                    CMMainTopAppBar(
-                        titleRes = CMResource.string.app_name,
-                        onSearchChats = {},
-                        onTakePhoto = {},
-                        onMoreOptions = {}
-                    )
-
                     CMNavHost(navController = appState.navController)
                 }
             }

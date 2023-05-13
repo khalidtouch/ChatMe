@@ -21,7 +21,8 @@ import com.khalidtouch.chatme.core.ui.MainTabViewModel
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ChatsScreen(
-    mainTabViewModel: MainTabViewModel = hiltViewModel<MainTabViewModel>()
+    mainTabViewModel: MainTabViewModel = hiltViewModel<MainTabViewModel>(),
+    onSelectContact: () -> Unit = {},
 ) {
     Surface(
         modifier = Modifier
@@ -37,7 +38,7 @@ fun ChatsScreen(
     ) {
         Scaffold(
             floatingActionButton = {
-                CMFabButton {
+                CMFabButton(onClick = onSelectContact) {
                     Icon(
                         painter = painterResource(CMIcons.Chats),
                         contentDescription = stringResource(id = R.string.chats)

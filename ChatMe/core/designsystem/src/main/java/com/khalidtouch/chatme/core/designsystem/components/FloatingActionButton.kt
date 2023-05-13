@@ -43,7 +43,7 @@ fun CMFabButton(
 
 
 object CMFabButtonDefaults {
-    val buttonSize = 64.dp
+    val buttonSize = 58.dp
 }
 
 

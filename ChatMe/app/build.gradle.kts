@@ -67,6 +67,7 @@ dependencies {
     implementation(project(":feature:chats"))
     implementation(project(":feature:calls"))
     implementation(project(":feature:status"))
+    implementation(project(":feature:contacts"))
 
     val composeBom = platform(libs.androidx.compose.bom)
 

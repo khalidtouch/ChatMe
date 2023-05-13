@@ -4,6 +4,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
+import com.khalidtouch.chatme.contacts.navigation.navigateToSelectContacts
+import com.khalidtouch.chatme.contacts.navigation.selectContactScreen
 
 @Composable
 fun CMNavHost(
@@ -16,7 +18,14 @@ fun CMNavHost(
         startDestination = startDestination,
         modifier = modifier,
     ) {
-        homeScreen()
+        homeScreen(
+            onSelectContact = { navController.navigateToSelectContacts() }
+        )
+        selectContactScreen(
+            onBack = { navController.navigateToHomeScreen() },
+            onSearchContacts = {},
+            onMoreOptions = {}
+        )
         /*todo: add screens here ...*/
     }
 }

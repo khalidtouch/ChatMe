@@ -9,9 +9,13 @@ import com.khalidtouch.chatme.ui.screens.HomeScreen
 const val homeScreenNavigationRoute = "homeScreenNavigationRoute"
 
 
-fun NavGraphBuilder.homeScreen() {
+fun NavGraphBuilder.homeScreen(
+    onSelectContact: () -> Unit,
+) {
     composable(route = homeScreenNavigationRoute) {
-        HomeScreen()
+        HomeScreen(
+            onSelectContact = onSelectContact,
+        )
     }
 }
 

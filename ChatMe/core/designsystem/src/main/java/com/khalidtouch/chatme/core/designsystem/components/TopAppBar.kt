@@ -100,3 +100,52 @@ fun CMSecondaryTopAppBar(
         colors = colors,
     )
 }
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun SelectContactTopBar(
+    modifier: Modifier = Modifier,
+    title: @Composable () -> Unit,
+    @DrawableRes navIconRes: Int = CMIcons.Back,
+    @DrawableRes searchIconRes: Int = CMIcons.Search,
+    @DrawableRes moreIconRes: Int = CMIcons.More,
+    onBack: () -> Unit = {},
+    onSearchContacts: () -> Unit = {},
+    onMoreOptions: () -> Unit = {},
+    colors: TopAppBarColors = TopAppBarDefaults.smallTopAppBarColors(
+        containerColor = MaterialTheme.colorScheme.primaryContainer,
+        titleContentColor = MaterialTheme.colorScheme.onPrimary,
+        navigationIconContentColor = MaterialTheme.colorScheme.onPrimary,
+        actionIconContentColor = MaterialTheme.colorScheme.onPrimary,
+        scrolledContainerColor = MaterialTheme.colorScheme.primary
+    ),
+) {
+    TopAppBar(
+        modifier = modifier,
+        title = title,
+        navigationIcon = {
+            IconButton(onClick = onBack) {
+                Icon(
+                    painter = painterResource(id = navIconRes),
+                    contentDescription = stringResource(id = CMResource.string.go_back)
+                )
+            }
+        },
+        actions = {
+            IconButton(onClick = onSearchContacts) {
+                Icon(
+                    painter = painterResource(id = searchIconRes),
+                    contentDescription = stringResource(id = CMResource.string.search_contacts)
+                )
+            }
+
+            IconButton(onClick = onMoreOptions) {
+                Icon(
+                    painter = painterResource(id = moreIconRes),
+                    contentDescription = stringResource(id = CMResource.string.more_options)
+                )
+            }
+        },
+        colors = colors,
+    )
+}
