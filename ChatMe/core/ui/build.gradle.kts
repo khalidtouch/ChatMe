@@ -15,6 +15,7 @@ android {
 dependencies {
     implementation(libs.kotlinx.coroutines.android)
     implementation(project(":core:designsystem"))
+    implementation(project(":core:data"))
 
     api(libs.androidx.compose.foundation)
     api(libs.androidx.compose.foundation.layout)
@@ -23,6 +24,7 @@ dependencies {
     api(libs.androidx.compose.runtime)
     api(libs.androidx.compose.ui.tooling.preview)
     api(libs.androidx.compose.ui.util)
+    api(libs.androidx.constraintlayout.compose)
 
     debugApi(libs.androidx.compose.ui.tooling)
 

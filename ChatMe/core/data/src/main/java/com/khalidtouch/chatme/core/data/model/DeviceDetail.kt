@@ -6,7 +6,7 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 @Parcelize
-data class LocalDeviceDetail(
+data class DeviceDetail(
     var deviceId: String? = null,
     var deviceModel: String? = null,
     var deviceBrand: String? = null,

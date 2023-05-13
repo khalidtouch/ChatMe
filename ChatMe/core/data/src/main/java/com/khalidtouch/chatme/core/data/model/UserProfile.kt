@@ -6,14 +6,14 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 @Parcelize
-data class LocalUserProfile(
+data class UserProfile(
     var uid: String? = null,
-    var createAt: Long? = null,
+    var createdAt: Long? = null,
     var updateAt: Long? = null,
     var image: String = "",
     var username: String = "",
     var about: String = "",
     var token: String = "",
-    var mobile: LocalMobile? = null,
-    var deviceDetail: LocalDeviceDetail? = null,
+    var mobile: Mobile? = null,
+    var deviceDetail: DeviceDetail? = null,
 ): Parcelable

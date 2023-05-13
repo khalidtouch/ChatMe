@@ -1,6 +1,6 @@
 package com.khalidtouch.chatme.core.data.model
 
-data class LocalContact(
+data class Contact(
     val name: String,
     val phone: String,
 )

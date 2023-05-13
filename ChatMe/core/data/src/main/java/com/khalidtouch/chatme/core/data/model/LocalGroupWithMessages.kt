@@ -4,9 +4,10 @@ import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 import kotlinx.serialization.Serializable
 
-@Serializable
+
 @Parcelize
-data class LocalMobile(
-    var country: String = "",
-    var phone: String = "",
-) : Parcelable
+@Serializable
+data class LocalGroupWithMessages(
+    val group: LocalGroup,
+    val messages: List<LocalGroupMessage>,
+): Parcelable

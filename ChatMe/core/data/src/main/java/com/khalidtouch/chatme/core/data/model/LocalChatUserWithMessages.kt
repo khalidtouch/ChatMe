@@ -6,9 +6,7 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 @Parcelize
-data class LocalCountry(
-    val code: String,
-    val countryName: String,
-    val money: String,
-    val noCode: String,
+data class LocalChatUserWithMessages(
+    val user: LocalChatUser,
+    val messages: List<LocalChatMessage>
 ) : Parcelable
