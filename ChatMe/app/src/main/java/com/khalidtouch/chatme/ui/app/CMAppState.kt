@@ -1,5 +1,6 @@
 package com.khalidtouch.chatme.ui.app
 
+import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.material3.windowsizeclass.WindowSizeClass
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Stable
@@ -9,6 +10,7 @@ import androidx.navigation.NavDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 import kotlinx.coroutines.CoroutineScope
 
 @Stable
@@ -25,11 +27,12 @@ class CMAppState(
 }
 
 
+@OptIn(ExperimentalAnimationApi::class)
 @Composable
 fun rememberCMAppState(
     windowSizeClass: WindowSizeClass,
     coroutineScope: CoroutineScope = rememberCoroutineScope(),
-    navController: NavHostController = rememberNavController()
+    navController: NavHostController = rememberAnimatedNavController()
 ): CMAppState {
     return remember(
         navController, coroutineScope, windowSizeClass

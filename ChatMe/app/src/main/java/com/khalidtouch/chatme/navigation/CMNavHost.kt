@@ -1,19 +1,21 @@
 package com.khalidtouch.chatme.navigation
 
+import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
-import androidx.navigation.compose.NavHost
+import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.khalidtouch.chatme.contacts.navigation.navigateToSelectContacts
 import com.khalidtouch.chatme.contacts.navigation.selectContactScreen
 
+@OptIn(ExperimentalAnimationApi::class)
 @Composable
 fun CMNavHost(
     navController: NavHostController,
     modifier: Modifier = Modifier,
     startDestination: String = homeScreenNavigationRoute
 ) {
-    NavHost(
+    AnimatedNavHost(
         navController = navController,
         startDestination = startDestination,
         modifier = modifier,

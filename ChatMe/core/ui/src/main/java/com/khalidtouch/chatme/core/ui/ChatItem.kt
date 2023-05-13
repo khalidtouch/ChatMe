@@ -137,7 +137,7 @@ private fun ChatItemWrapper(
                         surfaceColor = MaterialTheme.colorScheme.secondary,
                         label = {
                             Text(
-                                text = chatUserWithMessages.messages.size.toString(),
+                                text = chatUserWithMessages.user.unread.toString(),
                                 style = MaterialTheme.typography.labelMedium
                             )
                         }

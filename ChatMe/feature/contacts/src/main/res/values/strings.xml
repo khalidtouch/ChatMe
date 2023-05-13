@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="select_contact">Select Contact</string>
+    <string name="new_group">New Group</string>
+    <string name="create_group">Create Group</string>
+    <string name="create_contact">Create Contact</string>
+    <string name="new_contact">New Contact</string>
+    <string name="contacts_on_chat_me">Contacts on ChatMe</string>
 </resources>

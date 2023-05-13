@@ -83,7 +83,7 @@ dependencies {
     implementation(libs.androidx.compose.runtime.livedata)
     implementation(libs.androidx.hilt.navigation.compose)
     implementation(libs.androidx.core.splashscreen)
-    implementation(libs.androidx.navigation.compose)
+    implementation(libs.accompanist.navigation.animation)
     implementation(libs.androidx.compose.material3.windowSizeClass)
     implementation(libs.androidx.window.manager)
     testImplementation(libs.junit4)
